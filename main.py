@@ -83,8 +83,8 @@ def topics_analysis(username, domains, entities):
         """)
     
     elif domains_count >= 5 and entities_count >= 5:
-        top_five_domains = list(domains.items())[:5]
-        top_five_entities = list(entities.items())[:5] 
+        top_five_domains = list(domains.keys())[:5]
+        top_five_entities = list(entities.keys())[:5]
         print(f"""
         =====
         "Top five domain topics for @{username} in the past week: {top_five_domains}"
@@ -94,8 +94,8 @@ def topics_analysis(username, domains, entities):
         """)
     
     elif domains_count >= 3 and entities_count >= 3: 
-        top_three_domains = list(domains.items())[:3]
-        top_three_entities = list(entities.items())[:3]
+        top_three_domains = list(domains.keys())[:3]
+        top_three_entities = list(entities.keys())[:3]
         print(f"""
         =====
         "Top three domain topics for @{username} in the past week: {top_three_domains}"
@@ -105,11 +105,13 @@ def topics_analysis(username, domains, entities):
         """) 
 
     elif domains_count >= 1 and entities_count >= 1:
+        domains_list = list(domains.keys())
+        entities_list = list(entities.keys())
         print(f"""
         =====
-        "Limited domain topics available for @{username} in the past week. This includes: {domains}"
+        "Limited domain topics available for @{username} in the past week. This includes: {domains_list}"
         ~~~~~
-        "Limited entities topics available for @{username} in the past week. This includes: {entities}" 
+        "Limited entities topics available for @{username} in the past week. This includes: {entities_list}" 
         =====
         """)  
     
