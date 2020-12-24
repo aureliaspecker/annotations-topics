@@ -152,6 +152,7 @@ def annotations_analysis(username, domains, entities):
         """) 
 
     elif domains_count >= 1 and entities_count >= 1:
+        print(domains.items(), entities.items())
         domains_list = dict(itertools.islice(domains.items()))
         entities_list = dict(itertools.islice(entities.items()))
         print(f"""
